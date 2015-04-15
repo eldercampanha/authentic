@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1>Welcome to my site!</h1>
+
+<h2><%= flash[:notice] %> </h2>
+<% if signed_in? %>
+  <% user = current_user %>
+
+<%= link_to 'Log Out', sign_out_path, method: :delete %></p>
+<%= link_to 'Edit', edit_user_path(user) %></p>
+<% else %>
+<p>Have you been here before?
+<%= link_to 'Sign in!', new_session_path %></p>
+<p>Is it your first time?
+<%= link_to 'Sign up!', new_user_path%></p>
+<% end %>
 
 <%= yield %>
 

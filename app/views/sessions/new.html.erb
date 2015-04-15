@@ -1,0 +1,10 @@
+<%= form_tag(sessions_path, method: :post) do %>
+<%= label_tag :email  %>
+<%= email_field :session, :email  %>
+
+<%= label_tag :password  %>
+<%= password_field :session, :password  %>
+
+<%= submit_tag %>
+
+<% end  %>
